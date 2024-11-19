@@ -269,7 +269,7 @@ public partial class HomePageViewModel : ObservableObject, INavigationAware, IVi
     [RelayCommand]
     private void OnTest()
     {
-        // var result = OcrFactory.Paddle.OcrResult(new Mat(@"E:\HuiTask\更好的原神\自动秘境\自动战斗\队伍识别\x2.png", ImreadModes.Grayscale));
+        // var result = OcrFactory.Paddle.OcrResult(new Mat(@"E:\HuiTask\更好的锄地\自动秘境\自动战斗\队伍识别\x2.png", ImreadModes.Grayscale));
         // foreach (var region in result.Regions)
         // {
         //     Debug.WriteLine($"{region.Text}");
@@ -289,9 +289,9 @@ public partial class HomePageViewModel : ObservableObject, INavigationAware, IVi
         //    MessageBox.Show(e.StackTrace);
         //}
 
-        // Mat tar = new(@"E:\HuiTask\更好的原神\自动剧情\自动邀约\selected.png", ImreadModes.Grayscale);
+        // Mat tar = new(@"E:\HuiTask\更好的锄地\自动剧情\自动邀约\selected.png", ImreadModes.Grayscale);
         //  var mask = OpenCvCommonHelper.CreateMask(tar, new Scalar(0, 0, 0));
-        // var src = new Mat(@"E:\HuiTask\更好的原神\自动剧情\自动邀约\Clip_20240309_135839.png", ImreadModes.Grayscale);
+        // var src = new Mat(@"E:\HuiTask\更好的锄地\自动剧情\自动邀约\Clip_20240309_135839.png", ImreadModes.Grayscale);
         // var src2 = src.Clone();
         // var res = MatchTemplateHelper.MatchOnePicForOnePic(src, mask);
         // // 把结果画到原图上
@@ -300,7 +300,7 @@ public partial class HomePageViewModel : ObservableObject, INavigationAware, IVi
         //     Cv2.Rectangle(src2, t, new Scalar(0, 0, 255));
         // }
         //
-        // Cv2.ImWrite(@"E:\HuiTask\更好的原神\自动剧情\自动邀约\x1.png", src2);
+        // Cv2.ImWrite(@"E:\HuiTask\更好的锄地\自动剧情\自动邀约\x1.png", src2);
     }
 
     [RelayCommand]

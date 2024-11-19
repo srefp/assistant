@@ -15,7 +15,7 @@ public class PathingTaskInfo
     public string? Version { get; set; }
 
     /// <summary>
-    /// 制作时 耕地机 的版本，用于兼容性检查
+    /// 制作时 Assistant 的版本，用于兼容性检查
     /// </summary>
     public string? BgiVersion { get; set; }
 

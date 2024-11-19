@@ -10,7 +10,7 @@ internal static partial class UrlProtocolHelper
     public const string ProtocolRootKey = @"HKEY_CLASSES_ROOT\";
     public const string ProtocolUserKey = @"HKEY_CURRENT_USER\" + ProtocolUserSubKey;
     public const string ProtocolUserSubKey = @"Software\Classes\";
-    public const string ProtocolName = "耕地机";
+    public const string ProtocolName = "Assistant";
 
     public static RegistryHive RegistryHive { get; set; } = RegistryHive.CurrentUser;
 

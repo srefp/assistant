@@ -8,7 +8,7 @@ public class CharacterOrientationTest
 {
     public static void TestArrow()
     {
-        var mat = Cv2.ImRead(@"E:\HuiTask\更好的原神\自动秘境\箭头识别\3.png", ImreadModes.Color);
+        var mat = Cv2.ImRead(@"E:\HuiTask\更好的锄地\自动秘境\箭头识别\3.png", ImreadModes.Color);
         var lowScalar = new Scalar(0, 207, 255);
         var highScalar = new Scalar(0, 208, 255);
         var gray = OpenCvCommonHelper.Threshold(mat, lowScalar, highScalar);
@@ -98,7 +98,7 @@ public class CharacterOrientationTest
 
     public static void TestArrow2()
     {
-        var mat = Cv2.ImRead(@"E:\HuiTask\更好的原神\自动秘境\箭头识别\s1.png", ImreadModes.Color);
+        var mat = Cv2.ImRead(@"E:\HuiTask\更好的锄地\自动秘境\箭头识别\s1.png", ImreadModes.Color);
         Cv2.GaussianBlur(mat, mat, new Size(3, 3), 0);
         var splitMat = mat.Split();
 
@@ -121,7 +121,7 @@ public class CharacterOrientationTest
 
     public static void TestArrow3()
     {
-        var mat = Cv2.ImRead(@"E:\HuiTask\更好的原神\自动秘境\箭头识别\s1.png", ImreadModes.Color);
+        var mat = Cv2.ImRead(@"E:\HuiTask\更好的锄地\自动秘境\箭头识别\s1.png", ImreadModes.Color);
         Cv2.GaussianBlur(mat, mat, new Size(3, 3), 0);
         var splitMat = mat.Split();
 
@@ -197,7 +197,7 @@ public class CharacterOrientationTest
 
     public static void FloodFill()
     {
-        var mat = Cv2.ImRead(@"E:\HuiTask\更好的原神\自动秘境\箭头识别\s1.png", ImreadModes.Color);
+        var mat = Cv2.ImRead(@"E:\HuiTask\更好的锄地\自动秘境\箭头识别\s1.png", ImreadModes.Color);
         Cv2.GaussianBlur(mat, mat, new Size(3, 3), 0);
         var splitMat = mat.Split();
 
@@ -254,7 +254,7 @@ public class CharacterOrientationTest
 
     public static void Hsv()
     {
-        var mat = Cv2.ImRead(@"E:\HuiTask\更好的原神\自动秘境\箭头识别\e1.png", ImreadModes.Color);
+        var mat = Cv2.ImRead(@"E:\HuiTask\更好的锄地\自动秘境\箭头识别\e1.png", ImreadModes.Color);
         // Cv2.GaussianBlur(mat, mat, new Size(3, 3), 0);
         var splitMat = mat.Split();
 

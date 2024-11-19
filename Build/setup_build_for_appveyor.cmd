@@ -1,6 +1,6 @@
 cd /d %~dp0
 if exist dist rd /s /q dist
-mkdir dist\BetterGI
+mkdir dist\Assistant
 
 @echo [prepare compiler]
 for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath`) do set "path=%path%;%%i\MSBuild\Current\Bin;%%i\Common7\IDE"
@@ -12,9 +12,9 @@ for /f "usebackq delims=" %%i in (`powershell -NoLogo -NoProfile -Command "%scri
 echo current version is %version%
 if "%b%"=="" ( set "b=%version%" )
 
-set "tmpfolder=%~dp0dist\BetterGI"
-set "archiveFile=BetterGI_v%b%.7z"
-set "setupFile=BetterGI_Setup_v%b%.exe"
+set "tmpfolder=%~dp0dist\Assistant"
+set "archiveFile=Assistant_v%b%.7z"
+set "setupFile=Assistant_Setup_v%b%.exe"
 
 echo [build app using vs2022]
 cd /d %~dp0
@@ -45,5 +45,5 @@ msbuild MicaSetup\MicaSetup.csproj /t:Build /p:Configuration=Release /p:DeployOn
 del /f /q MicaSetup.exe
 copy /y .\MicaSetup\bin\Release\net472\MicaSetup.exe .\
 rename MicaSetup.exe %setupFile%
-rd /s /q dist\BetterGI
+rd /s /q dist\Assistant
 

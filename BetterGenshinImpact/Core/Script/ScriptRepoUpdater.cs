@@ -35,10 +35,10 @@ public class ScriptRepoUpdater : Singleton<ScriptRepoUpdater>
     public static readonly string ReposTempPath = Path.Combine(ReposPath, "Temp");
 
     // 中央仓库信息地址
-    public static readonly string CenterRepoInfoUrl = "https://raw.githubusercontent.com/babalae/耕地机-scripts-list/refs/heads/main/repo.json";
+    public static readonly string CenterRepoInfoUrl = "https://raw.githubusercontent.com/babalae/Assistant-scripts-list/refs/heads/main/repo.json";
 
     // 中央仓库解压后文件夹名
-    public static readonly string CenterRepoUnzipName = "耕地机-scripts-list-main";
+    public static readonly string CenterRepoUnzipName = "Assistant-scripts-list-main";
 
     public static readonly string CenterRepoPath = Path.Combine(ReposPath, CenterRepoUnzipName);
 
@@ -233,7 +233,7 @@ public class ScriptRepoUpdater : Singleton<ScriptRepoUpdater>
     public async Task ImportScriptFromUri(string uri, bool formClipboard)
     {
         // 检查剪切板内容是否符合特定的URL格式
-        if (!string.IsNullOrEmpty(uri) && uri.Trim().ToLower().StartsWith("耕地机://script?import="))
+        if (!string.IsNullOrEmpty(uri) && uri.Trim().ToLower().StartsWith("Assistant://script?import="))
         {
             Debug.WriteLine($"脚本订购内容：{uri}");
             // 执行相关操作

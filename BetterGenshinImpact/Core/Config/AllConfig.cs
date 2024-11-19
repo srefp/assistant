@@ -19,7 +19,7 @@ using System.Text.Json.Serialization;
 namespace BetterGenshinImpact.Core.Config;
 
 /// <summary>
-///     更好的原神配置
+///     更好的锄地配置
 /// </summary>
 [Serializable]
 public partial class AllConfig : ObservableObject

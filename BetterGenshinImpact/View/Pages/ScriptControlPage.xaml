@@ -173,7 +173,7 @@
                               Margin="0,0,0,8"
                               Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                               TextWrapping="Wrap">
-                    在下方列表中右键可以添加配置，拖拽可以调整执行顺序。支持 耕地机 内的 Javascript 脚本、键鼠录制脚本等，通过调度器可以设置脚本执行次数、顺序等。
+                    在下方列表中右键可以添加配置，拖拽可以调整执行顺序。支持 Assistant 内的 Javascript 脚本、键鼠录制脚本等，通过调度器可以设置脚本执行次数、顺序等。
                 </ui:TextBlock>
 
 

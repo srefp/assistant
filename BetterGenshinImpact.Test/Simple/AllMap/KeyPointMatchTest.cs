@@ -12,16 +12,16 @@ public class KeyPointMatchTest
 {
     public static void Test()
     {
-        // var trainMat = new Mat(@"E:\HuiTask\更好的原神\地图匹配\比较\叠图\无法匹配2.png", ImreadModes.Color);
-        var trainMat = new Mat(@"E:\HuiTask\更好的原神\地图匹配\比较\小地图\Clip_20240323_152015.png", ImreadModes.Grayscale);
+        // var trainMat = new Mat(@"E:\HuiTask\更好的锄地\地图匹配\比较\叠图\无法匹配2.png", ImreadModes.Color);
+        var trainMat = new Mat(@"E:\HuiTask\更好的锄地\地图匹配\比较\小地图\Clip_20240323_152015.png", ImreadModes.Grayscale);
 
         // tar = tar.Resize(new Size(tar.Width * 2, tar.Height * 2), 0, 0, InterpolationFlags.Nearest);
 
-        // var queryMat = new Mat(@"E:\HuiTask\更好的原神\地图匹配\combined_image_lim[quick].png", ImreadModes.Color);
-        var queryMat = new Mat(@"E:\HuiTask\更好的原神\地图匹配\combined_image_2048_lim[quick].png", ImreadModes.Grayscale);
+        // var queryMat = new Mat(@"E:\HuiTask\更好的锄地\地图匹配\combined_image_lim[quick].png", ImreadModes.Color);
+        var queryMat = new Mat(@"E:\HuiTask\更好的锄地\地图匹配\combined_image_2048_lim[quick].png", ImreadModes.Grayscale);
         var res = MatchPicBySurf(trainMat, queryMat);
 
-        Cv2.ImWrite(@"E:\HuiTask\更好的原神\地图匹配\s1.png", res);
+        Cv2.ImWrite(@"E:\HuiTask\更好的锄地\地图匹配\s1.png", res);
     }
 
     /*public static Mat MatchPicBySift(Mat matSrc, Mat matTo)
@@ -34,8 +34,8 @@ public class KeyPointMatchTest
         KeyPoint[] keyPointsSrc, keyPointsTo;
         using (var sift = SIFT.Create())
         {
-            var kpPath = @"E:\HuiTask\更好的原神\地图匹配\sift.kp";
-            var kpMatPath = @"E:\HuiTask\更好的原神\地图匹配\sift.mat";
+            var kpPath = @"E:\HuiTask\更好的锄地\地图匹配\sift.kp";
+            var kpMatPath = @"E:\HuiTask\更好的锄地\地图匹配\sift.mat";
             if (File.Exists(kpPath) && File.Exists(kpMatPath))
             {
                 keyPointsSrc = (KeyPoint[])DeserializeObject(File.ReadAllBytes(kpPath));

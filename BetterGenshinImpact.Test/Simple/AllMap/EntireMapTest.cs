@@ -14,9 +14,9 @@ public class EntireMapTest
     public static void Test()
     {
         SpeedTimer speedTimer = new();
-        var mainMap1024BlockMat = new Mat(@"E:\HuiTask\更好的原神\地图匹配\有用的素材\mainMap1024Block.png", ImreadModes.Grayscale);
+        var mainMap1024BlockMat = new Mat(@"E:\HuiTask\更好的锄地\地图匹配\有用的素材\mainMap1024Block.png", ImreadModes.Grayscale);
         var surfMatcher = new FeatureMatcher(mainMap1024BlockMat);
-        var queryMat = new Mat(@"E:\HuiTask\更好的原神\地图匹配\比较\小地图\Clip_20240323_183119.png", ImreadModes.Grayscale);
+        var queryMat = new Mat(@"E:\HuiTask\更好的锄地\地图匹配\比较\小地图\Clip_20240323_183119.png", ImreadModes.Grayscale);
 
         speedTimer.Record("初始化特征");
 
@@ -26,7 +26,7 @@ public class EntireMapTest
         {
             Debug.WriteLine($"Matched rect 1: {p}");
             Cv2.Circle(mainMap1024BlockMat, p.ToPoint(), 10, Scalar.Red);
-            // Cv2.ImWrite(@"E:\HuiTask\更好的原神\地图匹配\b1.png", mainMap1024BlockMat);
+            // Cv2.ImWrite(@"E:\HuiTask\更好的锄地\地图匹配\b1.png", mainMap1024BlockMat);
 
             var p2 = surfMatcher.Match(queryMat, p.X, p.Y);
             speedTimer.Record("匹配2");
@@ -35,7 +35,7 @@ public class EntireMapTest
                 // var rect2 = Cv2.BoundingRect(pArray2);
                 Debug.WriteLine($"Matched rect 2: {p2}");
                 // Cv2.Rectangle(mainMap1024BlockMat, rect2, Scalar.Yellow, 1);
-                // Cv2.ImWrite(@"E:\HuiTask\更好的原神\地图匹配\b2.png", mainMap1024BlockMat);
+                // Cv2.ImWrite(@"E:\HuiTask\更好的锄地\地图匹配\b2.png", mainMap1024BlockMat);
             }
             else
             {

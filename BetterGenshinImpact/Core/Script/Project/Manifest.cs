@@ -55,7 +55,7 @@ public class Manifest
         // 比较版本号大小 BgiVersion
         if (!string.IsNullOrWhiteSpace(BgiVersion) && Global.IsNewVersion(BgiVersion))
         {
-            TaskControl.Logger.LogError("脚本 {Name} 版本号要求 {BgiVersion} 大于当前 耕地机 版本号 {CurrentVersion} ， 脚本可能无法正常工作，请更新 耕地机 版本！", Name, BgiVersion, Global.Version);
+            TaskControl.Logger.LogError("脚本 {Name} 版本号要求 {BgiVersion} 大于当前 耕地机 版本号 {CurrentVersion} ， 脚本可能无法正常工作，请更新 Assistant 版本！", Name, BgiVersion, Global.Version);
         }
     }
 

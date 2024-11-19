@@ -10,7 +10,7 @@
                  xmlns:tray="http://schemas.lepo.co/wpfui/2022/xaml/tray"
                  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
                  xmlns:viewModel="clr-namespace:BetterGenshinImpact.ViewModel"
-                 Title="耕地机"
+                 Title="Assistant"
                  Width="900"
                  Height="600"
                  d:Background="#D2D2D2"
@@ -124,7 +124,7 @@
                          Icon="pack://application:,,,/Assets/Images/logo.ico"
                          LeftDoubleClick="OnNotifyIconLeftDoubleClick"
                          MenuOnRightClick="True"
-                         TooltipText="耕地机">
+                         TooltipText="Assistant">
             <tray:NotifyIcon.Menu>
                 <ContextMenu>
                     <ContextMenu.DataContext>

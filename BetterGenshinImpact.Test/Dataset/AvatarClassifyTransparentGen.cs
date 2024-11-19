@@ -7,7 +7,7 @@ namespace BetterGenshinImpact.Test.Dataset;
 public class AvatarClassifyTransparentGen
 {
     // 基础图像文件夹
-    private const string BaseDir = @"E:\HuiTask\更好的原神\自动秘境\自动战斗\队伍识别\分类器\";
+    private const string BaseDir = @"E:\HuiTask\更好的锄地\自动秘境\自动战斗\队伍识别\分类器\";
 
     // 背景图像文件夹
     private static readonly string BackgroundDir = Path.Combine(BaseDir, "background");

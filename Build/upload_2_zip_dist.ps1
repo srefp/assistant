@@ -1,34 +1,34 @@
-# µ¼Èë±ØÒªµÄÄ£¿é
+# ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ä£ï¿½ï¿½
 Import-Module -Name Microsoft.PowerShell.Archive
 
-# ¶¨ÒåÄ¿Â¼Â·¾¶
-$directoryPath = ".\dist\BetterGI"
-$outputJsonPath = "E:\HuiTask\BetterGIBuild\UploadGit\bettergi-installation-data\hash.json"
-$destinationDir = "E:\HuiTask\BetterGIBuild\UploadGit\bettergi-installation-data\installation"
+# ï¿½ï¿½ï¿½ï¿½Ä¿Â¼Â·ï¿½ï¿½
+$directoryPath = ".\dist\Assistant"
+$outputJsonPath = "E:\HuiTask\AssistantBuild\UploadGit\bettergi-installation-data\hash.json"
+$destinationDir = "E:\HuiTask\AssistantBuild\UploadGit\bettergi-installation-data\installation"
 
-# ½«Ïà¶ÔÂ·¾¶×ª»»Îª¾ø¶ÔÂ·¾¶
+# ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½×ªï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 $absoluteDirectoryPath = (Resolve-Path -Path $directoryPath).Path
 
-# ¶¨ÒåÒªÌø¹ýµÄÄ¿Â¼
+# ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼
 $excludedDirectories = @(
-    ".\dist\BetterGI\Script",
-    ".\dist\BetterGI\User"
+    ".\dist\Assistant\Script",
+    ".\dist\Assistant\User"
 )
-# ½«Ïà¶ÔÂ·¾¶×ª»»Îª¾ø¶ÔÂ·¾¶
+# ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½×ªï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 $excludedDirectories = $excludedDirectories | ForEach-Object { (Resolve-Path -Path $_).Path }
 
-# ³õÊ¼»¯Ò»¸ö¿ÕµÄ¹þÏ£±íÀ´´æ´¢ÎÄ¼þÂ·¾¶ºÍ¹þÏ£Öµ
+# ï¿½ï¿½Ê¼ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ÕµÄ¹ï¿½Ï£ï¿½ï¿½ï¿½ï¿½ï¿½æ´¢ï¿½Ä¼ï¿½Â·ï¿½ï¿½ï¿½Í¹ï¿½Ï£Öµ
 $fileHashes = @{}
 
-# »ñÈ¡Ä¿Â¼ÏÂµÄËùÓÐÎÄ¼þ£¬°üÀ¨×ÓÄ¿Â¼
+# ï¿½ï¿½È¡Ä¿Â¼ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼
 $files = Get-ChildItem -Path $directoryPath -Recurse -File
 
 foreach ($file in $files) {
-    # Ìø¹ýÒÑ¾­ÊÇ .zip µÄÎÄ¼þ
+    # ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ .zip ï¿½ï¿½ï¿½Ä¼ï¿½
     if ($file.Extension -eq ".zip") {
         continue
     }
-    # ¼ì²éÎÄ¼þÊÇ·ñÔÚÒªÌø¹ýµÄÄ¿Â¼ÖÐ
+    # ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½ï¿½
     $skipFile = $false
     foreach ($excludedDir in $excludedDirectories) {
         if ($file.FullName.StartsWith($excludedDir)) {
@@ -41,51 +41,51 @@ foreach ($file in $files) {
         continue
     }
 
-    # ¼ÆËãÎÄ¼þµÄ¹þÏ£Öµ
+    # ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ä¹ï¿½Ï£Öµ
     $hash = Get-FileHash -Path $file.FullName -Algorithm SHA256
 
-    # ¼ì²é¹þÏ£ÖµÊÇ·ñÎª¿Õ
+    # ï¿½ï¿½ï¿½ï¿½Ï£Öµï¿½Ç·ï¿½Îªï¿½ï¿½
     if ($null -eq $hash) {
         Write-Host "Failed to compute hash for file: $($file.FullName)"
         continue
     }
 
-    # ¼ÆËãÏà¶ÔÂ·¾¶
+    # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
     $relativePath = $file.FullName.Replace($absoluteDirectoryPath, "").TrimStart("\\")
 
-    # ½«Ïà¶ÔÂ·¾¶ºÍ¹þÏ£ÖµÌí¼Óµ½¹þÏ£±íÖÐ
+    # ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Í¹ï¿½Ï£Öµï¿½ï¿½Óµï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½
     $fileHashes[$relativePath] = $hash.Hash
 
-    # ¶¨ÒåÑ¹ËõÎÄ¼þµÄÂ·¾¶
+    # ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Â·ï¿½ï¿½
     $zipFilePath = "$($file.FullName).zip"
 
-    # Ñ¹ËõÎÄ¼þ²¢Ìæ»»Í¬ÃûÑ¹ËõÎÄ¼þ
+    # Ñ¹ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½æ»»Í¬ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½Ä¼ï¿½
     Compress-Archive -Path $file.FullName -DestinationPath $zipFilePath -Force
 }
 
-# ½«¹þÏ£±í×ª»»Îª JSON ¸ñÊ½
+# ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½×ªï¿½ï¿½Îª JSON ï¿½ï¿½Ê½
 $jsonContent = $fileHashes | ConvertTo-Json -Depth 10
 
-# Ê¹ÓÃ UTF-8 ±àÂëÐ´Èë JSON ÎÄ¼þ
+# Ê¹ï¿½ï¿½ UTF-8 ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ JSON ï¿½Ä¼ï¿½
 [System.IO.File]::WriteAllText($outputJsonPath, $jsonContent, [System.Text.Encoding]::UTF8)
 
 
 
-# »ñÈ¡ËùÓÐ .zip ÎÄ¼þ£¬°üÀ¨×ÓÄ¿Â¼
+# ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ .zip ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼
 $zipFiles = Get-ChildItem -Path $absoluteDirectoryPath -Recurse -Filter *.zip
 
 foreach ($file in $zipFiles) {
-    # ¼ÆËãÄ¿±êÂ·¾¶
+    # ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Â·ï¿½ï¿½
     $relativePath = $file.FullName.Substring($absoluteDirectoryPath.Length)
     $destinationPath = Join-Path $destinationDir $relativePath
 
-    # ´´½¨Ä¿±êÄ¿Â¼
+    # ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ä¿Â¼
     $destinationDirPath = Split-Path $destinationPath
     if (-not (Test-Path $destinationDirPath)) {
         New-Item -ItemType Directory -Path $destinationDirPath -Force
     }
 
-    # ¿½±´ÎÄ¼þ
+    # ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
     Copy-Item -Path $file.FullName -Destination $destinationPath -Force
 }
 

@@ -6,7 +6,7 @@ namespace BetterGenshinImpact.GameTask.AutoFight;
 
 /// <summary>
 /// 自动战斗上下文
-/// 请在启动耕地机以后再初始化
+/// 请在启动Assistant以后再初始化
 /// </summary>
 public class AutoFightContext : Singleton<AutoFightContext>
 {

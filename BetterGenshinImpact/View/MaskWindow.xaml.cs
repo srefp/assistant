@@ -162,7 +162,7 @@ public partial class MaskWindow : Window
 
     private void PrintSystemInfo()
     {
-        _logger.LogInformation("更好的原神 {Version}", Global.Version);
+        _logger.LogInformation("更好的锄地 {Version}", Global.Version);
         var systemInfo = TaskContext.Instance().SystemInfo;
         var width = systemInfo.GameScreenSize.Width;
         var height = systemInfo.GameScreenSize.Height;

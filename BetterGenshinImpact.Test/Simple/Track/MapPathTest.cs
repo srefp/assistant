@@ -19,7 +19,7 @@ internal class MapPathTest
         // var points = way.WayPointList.Select(giPathPoint => giPathPoint.MatchRect.GetCenterPoint()).ToList();
         //
         // var pointsRect = Cv2.BoundingRect(points);
-        // var allMap = new Mat(@"E:\HuiTask\更好的原神\地图匹配\有用的素材\mainMap2048Block.png");
+        // var allMap = new Mat(@"E:\HuiTask\更好的锄地\地图匹配\有用的素材\mainMap2048Block.png");
         //
         // // 按顺序连线，每个点都画圈
         // for (var i = 0; i < points.Count - 1; i++)

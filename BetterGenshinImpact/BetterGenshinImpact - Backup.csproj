@@ -9,7 +9,7 @@
 		<LangVersion>12.0</LangVersion>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<ApplicationIcon>Assets\Images\logo.ico</ApplicationIcon>
-		<AssemblyName>BetterGI</AssemblyName>
+		<AssemblyName>Assistant</AssemblyName>
 		<AssemblyVersion>0.36.2</AssemblyVersion>
 		<Platforms>x64</Platforms>
 		<DebugType>embedded</DebugType>

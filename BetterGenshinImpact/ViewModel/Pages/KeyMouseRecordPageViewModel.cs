@@ -106,7 +106,7 @@ public partial class KeyMouseRecordPageViewModel : ObservableObject, INavigation
             {
                 var macro = GlobalKeyMouseRecord.Instance.StopRecord();
                 // Genshin Copilot Macro
-                File.WriteAllText(Path.Combine(scriptPath, $"耕地机_GCM_{DateTime.Now:yyyyMMddHHmmssffff}.json"), macro);
+                File.WriteAllText(Path.Combine(scriptPath, $"Assistant_GCM_{DateTime.Now:yyyyMMddHHmmssffff}.json"), macro);
                 // 刷新ListView
                 InitScriptListViewData();
                 IsRecording = false;

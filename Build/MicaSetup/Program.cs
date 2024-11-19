@@ -7,9 +7,9 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: Guid("00000000-0000-0000-0000-000000000000")]
-[assembly: AssemblyTitle("耕地机 Setup")]
-[assembly: AssemblyProduct("耕地机")]
-[assembly: AssemblyDescription("耕地机 Setup")]
+[assembly: AssemblyTitle("Assistant Setup")]
+[assembly: AssemblyProduct("Assistant")]
+[assembly: AssemblyDescription("Assistant Setup")]
 [assembly: AssemblyCompany("Lemutec")]
 [assembly: AssemblyCopyright("Under GPL-3.0 license. Copyright (c) better-genshin-impact Contributors.")]
 [assembly: AssemblyVersion("2.0.0.0")]
@@ -24,7 +24,7 @@ internal class Program
     {
         Hosting.CreateBuilder()
             .UseLogger()
-            .UseSingleInstance("耕地机_MicaSetup")
+            .UseSingleInstance("Assistant_MicaSetup")
             .UseTempPathFork()
             .UseElevated()
             .UseDpiAware()
@@ -47,14 +47,14 @@ internal class Program
                 option.IsInstallCertificate = false;
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
                 option.UnpackingPassword = null!;
-                option.ExeName = @"耕地机\耕地机.exe";
-                option.KeyName = "耕地机";
-                option.DisplayName = "耕地机";
-                option.DisplayIcon = @"耕地机\耕地机.exe";
+                option.ExeName = @"Assistant\Assistant.exe";
+                option.KeyName = "Assistant";
+                option.DisplayName = "Assistant";
+                option.DisplayIcon = @"Assistant\Assistant.exe";
                 option.DisplayVersion = "0.0.0.0";
                 option.Publisher = "babalae";
-                option.AppName = "耕地机";
-                option.SetupName = $"耕地机 {Mui("Setup")}";
+                option.AppName = "Assistant";
+                option.SetupName = $"Assistant {Mui("Setup")}";
             })
             .UseServices(service =>
             {

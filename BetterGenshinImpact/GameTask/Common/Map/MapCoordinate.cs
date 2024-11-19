@@ -7,7 +7,7 @@ namespace BetterGenshinImpact.GameTask.Common.Map;
 /// <summary>
 /// 地图坐标系转换
 /// 1. 原神游戏坐标系 Game
-/// 2. 耕地机主地图1024区块坐标系 Main1024
+/// 2. Assistant主地图1024区块坐标系 Main1024
 /// </summary>
 public class MapCoordinate
 {

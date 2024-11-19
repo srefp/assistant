@@ -76,7 +76,7 @@ internal static class RuntimeHelper
             {
                 UseShellExecute = true,
                 WorkingDirectory = dir ?? Global.StartUpPath,
-                FileName = fileName ?? "耕地机.exe",
+                FileName = fileName ?? "Assistant.exe",
                 Arguments = args ?? ReArguments(),
                 Verb = "runas"
             };

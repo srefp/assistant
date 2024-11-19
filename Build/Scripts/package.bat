@@ -21,8 +21,8 @@ if "%b%"=="" (
    set "b=%version%"
 )
 
-set "tmpfolder=%~dp0\BetterGI.v%b%"
-set "zipFile=%~dp0\BetterGI.v%b%.zip"
+set "tmpfolder=%~dp0\Assistant.v%b%"
+set "zipFile=%~dp0\Assistant.v%b%.zip"
 
 
 echo 输入版本号为：%tmpfolder%

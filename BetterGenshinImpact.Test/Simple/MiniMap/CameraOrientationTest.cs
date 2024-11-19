@@ -6,7 +6,7 @@ public class CameraOrientationTest
 {
     public static (int[], int[], int[]) Test1()
     {
-        var mat = Cv2.ImRead(@"E:\HuiTask\更好的原神\自动秘境\视角朝向识别\3.png", ImreadModes.Grayscale);
+        var mat = Cv2.ImRead(@"E:\HuiTask\更好的锄地\自动秘境\视角朝向识别\3.png", ImreadModes.Grayscale);
         Cv2.GaussianBlur(mat, mat, new Size(3, 3), 0);
         // 极坐标展开
         var centerPoint = new Point2f(mat.Width / 2f, mat.Height / 2f);
@@ -16,7 +16,7 @@ public class CameraOrientationTest
         var polarRoiMat = new Mat(polarMat, new Rect(10, 0, 70, polarMat.Height));
         Cv2.Rotate(polarRoiMat, polarRoiMat, RotateFlags.Rotate90Counterclockwise);
         Cv2.ImShow("极坐标转换后", polarRoiMat);
-        //Cv2.ImWrite(@"E:\HuiTask\更好的原神\自动秘境\视角朝向识别\2_p.png", polarRoiMat);
+        //Cv2.ImWrite(@"E:\HuiTask\更好的锄地\自动秘境\视角朝向识别\2_p.png", polarRoiMat);
 
         var scharrResult = new Mat();
         Cv2.Scharr(polarRoiMat, scharrResult, MatType.CV_32F, 1, 0);
@@ -139,7 +139,7 @@ public class CameraOrientationTest
 
     public static void Test2()
     {
-        var mat = Cv2.ImRead(@"E:\HuiTask\更好的原神\自动秘境\视角朝向识别\1.png", ImreadModes.Color);
+        var mat = Cv2.ImRead(@"E:\HuiTask\更好的锄地\自动秘境\视角朝向识别\1.png", ImreadModes.Color);
 
         // 极坐标展开
         var centerPoint = new Point2f(mat.Width / 2f, mat.Height / 2f);

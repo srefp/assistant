@@ -12,7 +12,7 @@ labels: bug
 - 系统环境 / System Environment：
 
 
-- BetterGI版本号 / BetterGI Version：
+- Assistant版本号 / Assistant Version：
 
 
 - 问题描述 / Description of the issue：

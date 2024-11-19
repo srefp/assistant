@@ -19,10 +19,10 @@ public class BigMapMatchTest
 
         var map2048 = MapAssets.Instance.MainMap2048BlockMat.Value;
         var mainMap100BlockMat = ResizeHelper.Resize(map2048, 1d / (4 * 2));
-        Cv2.ImWrite(@"E:\HuiTask\更好的原神\地图匹配\有用的素材\mainMap128Block.png", mainMap100BlockMat);
+        Cv2.ImWrite(@"E:\HuiTask\更好的锄地\地图匹配\有用的素材\mainMap128Block.png", mainMap100BlockMat);
 
         var surfMatcher = new FeatureMatcher(mainMap100BlockMat);
-        var queryMat = new Mat(@"E:\HuiTask\更好的原神\地图匹配\比较\Clip_20240321_000329.png", ImreadModes.Grayscale);
+        var queryMat = new Mat(@"E:\HuiTask\更好的锄地\地图匹配\比较\Clip_20240321_000329.png", ImreadModes.Grayscale);
 
         speedTimer.Record("初始化特征");
 
