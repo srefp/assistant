@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="BetterGenshinImpact.View.Pages.RoutePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:BetterGenshinImpact.View.Controls"
+             xmlns:pages="clr-namespace:BetterGenshinImpact.ViewModel.Pages"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+             d:DataContext="{d:DesignInstance Type=pages:AutoTpPageViewModel}"
+             d:DesignHeight="850"
+             d:DesignWidth="600"
+             ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+             ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+             FontFamily="{StaticResource TextThemeFontFamily}"
+             Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+             mc:Ignorable="d">
+
+    <Grid>
+        <ui:TextBlock Grid.Row="0"
+                      Grid.Column="0"
+                      FontTypography="Body"
+                      Text="正在开发中......"
+                      Margin="24"
+                      TextWrapping="Wrap" />
+    </Grid>
+</UserControl>
